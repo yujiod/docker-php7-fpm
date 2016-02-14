@@ -11,4 +11,4 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd \
     && rm -rf /var/lib/apt/lists/*
 
-RUN echo "" >> /usr/local/etc/php-fpm.conf && echo "php_flag[display_errors] = off" >> /usr/local/etc/php-fpm.conf
+RUN echo "" >> /usr/local/etc/php-fpm.conf && echo "php_flag[display_errors] = off" >> /usr/local/etc/php-fpm.conf && echo "php_flag[expose_php] = off" >> /usr/local/etc/php-fpm.conf
